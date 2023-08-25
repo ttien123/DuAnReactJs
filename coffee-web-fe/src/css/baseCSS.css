@@ -1,0 +1,38 @@
+@tailwind base;
+
+@layer base {
+    body {
+        @apply font-Roboto text-colorTextWeb;
+    }
+
+    h4 {
+        @apply text-2xl;
+    }
+
+    h3 {
+        @apply text-3xl;
+    }
+    h1 {
+        @apply text-5xl font-bold;
+    }
+    section {
+        @apply py-[7.5rem];
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        width: 8px;
+        background: white;
+        border-left: 0 solid white;
+        border-right: 0 solid white;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #592b1c;
+        width: 0;
+        height: 25%;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+}
