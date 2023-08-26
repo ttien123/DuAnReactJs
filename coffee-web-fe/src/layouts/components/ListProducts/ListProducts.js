@@ -9,7 +9,6 @@ function ListProducts() {
         queryFn: () => getListProducts(),
     });
 
-    console.log(data);
     return (
         <section>
             <div className="px-[20px]">

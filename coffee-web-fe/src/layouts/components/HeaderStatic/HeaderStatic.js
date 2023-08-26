@@ -5,8 +5,10 @@ import { AiOutlineUser, AiOutlineClose, AiOutlineShoppingCart } from 'react-icon
 import HeadlessTippy from '@tippyjs/react/headless';
 import { useDispatch, useSelector } from 'react-redux';
 import { setOpenSideMenu } from '../../../reducer/reducerSideMenu/SideMenu.reducer';
+import { setOpenSignIn, setOpenSignUp } from '../../../reducer/Auth/Auth';
 function HeaderStatic({ isFixed }) {
     const [isClickLogin, setIsClickLogin] = useState(false);
+    // const isOpenSignIn = useSelector((state) => state.authState.isOpenSignIn);
 
     // xét tắt mở sideMenu
     const isOpenSideMenu = useSelector((state) => state.sideMenu.isOpenSideMeu);
@@ -21,6 +23,13 @@ function HeaderStatic({ isFixed }) {
     };
     const handleHideAuth = () => {
         setIsClickLogin(false);
+    };
+
+    const handleOpenSignIn = () => {
+        dispatch(setOpenSignIn());
+    };
+    const handleOpenSignUp = () => {
+        dispatch(setOpenSignUp());
     };
 
     return (
@@ -68,10 +77,16 @@ function HeaderStatic({ isFixed }) {
                                     <AiOutlineClose className="text-[20px]" />
                                 </button>
                             </div>
-                            <button className="block px-4 py-2 text-center w-full transition-all duration-300 ease-in-out font-medium min-w-[150px] border-[2px] border-solid border-colorWeb text-colorWeb hover:bg-colorWeb hover:text-white">
+                            <button
+                                onClick={handleOpenSignIn}
+                                className="block px-4 py-2 text-center w-full transition-all duration-300 ease-in-out font-medium min-w-[150px] border-[2px] border-solid border-colorWeb text-colorWeb hover:bg-colorWeb hover:text-white"
+                            >
                                 Sign In
                             </button>
-                            <button className="block px-4 py-2 text-center w-full transition-all duration-300 ease-in-out font-medium min-w-[150px] border-[2px] border-solid  border-colorWeb mt-2 text-colorWeb hover:bg-colorWeb hover:text-white">
+                            <button
+                                onClick={handleOpenSignUp}
+                                className="block px-4 py-2 text-center w-full transition-all duration-300 ease-in-out font-medium min-w-[150px] border-[2px] border-solid  border-colorWeb mt-2 text-colorWeb hover:bg-colorWeb hover:text-white"
+                            >
                                 Sign Up
                             </button>
                         </div>

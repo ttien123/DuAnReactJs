@@ -3,9 +3,12 @@ import LoadingStart from '../../components/loading/loadingStart/LoadingStart';
 import HeaderStatic from '../components/HeaderStatic';
 import SideMenu from '../components/SideMenu/SideMenu';
 import { useState } from 'react';
+import SignIn from '../../components/SignIn/SignIn';
+import SignUp from '../../components/SignUp/SignUp';
 
 function MainLayout({ children }) {
     const [isFixed, setIsFixed] = useState(false);
+
     useEffect(() => {
         const handleScroll = () => {
             if ((window.scrollY || document.documentElement.scrollTop) >= 182) {
@@ -26,6 +29,8 @@ function MainLayout({ children }) {
             {/* <LoadingStart /> */}
             <HeaderStatic isFixed={isFixed} />
             <SideMenu />
+            <SignIn />
+            <SignUp />
             <main>{children}</main>
         </div>
     );
