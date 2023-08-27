@@ -37,14 +37,14 @@ function Navbar({ isColMenu }) {
                         isColMenu ? 'text-center w-full lg:text-left' : 'text-center'
                     }`}
                 >
-                    <ButtonCst isColMenu={isColMenu}>Reviews</ButtonCst>
+                    <ButtonCst isColMenu={isColMenu}>News & Blog</ButtonCst>
                 </li>
                 <li
                     className={`navbar-item min-w-[130px] cursor-pointer inline-block ${
                         isColMenu ? 'text-center w-full lg:text-left' : 'text-center'
                     }`}
                 >
-                    <ButtonCst isColMenu={isColMenu}>News & Blog</ButtonCst>
+                    <ButtonCst isColMenu={isColMenu}>Reviews</ButtonCst>
                 </li>
 
                 <li className={`navbar-item-box-icon !top-[-16px] ${isColMenu ? 'hidden' : 'flex'}`}>
