@@ -53,7 +53,7 @@ function SignUp() {
                     e.stopPropagation();
                     // e.preventDefault();
                 }}
-                className="relative w-[485px] h-[580px] rounded-lg bg-white pt-[16px]"
+                className={`h-[650px] relative w-[485px] rounded-lg bg-white pt-[16px]`}
             >
                 <button
                     onClick={handleCloseSignUp}
@@ -89,8 +89,8 @@ function SignUp() {
                                 type="password"
                                 name="password"
                                 className={`${
-                                    errors.password ? '!border-red-600' : ''
-                                }block outline-none border-solid border-[1px] w-full px-2 py-2 mt-1 mb-4 border-[#1618231f] focus-within:border-colorWeb transition-all duration-500 caret-colorWeb`}
+                                    errors.password? '!border-red-600' : ''
+                                } block outline-none border-solid border-[1px] w-full px-2 py-2 mt-1 mb-4 border-[#1618231f] focus-within:border-colorWeb transition-all duration-500 caret-colorWeb`}
                                 placeholder="Password"
                                 {...register('password', {
                                     required: true,
@@ -111,7 +111,7 @@ function SignUp() {
                                 name="rePassword"
                                 className={`${
                                     errors.rePassword ? '!border-red-600' : ''
-                                }block outline-none border-solid border-[1px] w-full px-2 py-2 mt-1 mb-4 border-[#1618231f] focus-within:border-colorWeb transition-all duration-500 caret-colorWeb`}
+                                } block outline-none border-solid border-[1px] w-full px-2 py-2 mt-1 mb-4 border-[#1618231f] focus-within:border-colorWeb transition-all duration-500 caret-colorWeb`}
                                 placeholder="Re-Password"
                                 {...register('rePassword', {
                                     required: true,
