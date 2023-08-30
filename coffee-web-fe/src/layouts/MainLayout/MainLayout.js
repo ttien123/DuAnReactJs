@@ -5,9 +5,12 @@ import SideMenu from '../components/SideMenu/SideMenu';
 import { useState } from 'react';
 import SignIn from '../../components/SignIn/SignIn';
 import SignUp from '../../components/SignUp/SignUp';
+import MyBag from '../../components/Mybag/Mybag';
+import MoBiMyBag from '../../components/MobiMyBag/MobiMyBag';
 
 function MainLayout({ children }) {
     const [isFixed, setIsFixed] = useState(false);
+    const [isOpenBag, setIsOpenBag] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,10 +30,12 @@ function MainLayout({ children }) {
     return (
         <div className="overflow-hidden">
             {/* <LoadingStart /> */}
-            <HeaderStatic isFixed={isFixed} />
+            <HeaderStatic isFixed={isFixed} isOpenBag={isOpenBag} setIsOpenBag={setIsOpenBag} />
+            <MyBag isOpenBag={isOpenBag} setIsOpenBag={setIsOpenBag} />
             <SideMenu />
             <SignIn />
             <SignUp />
+            <MoBiMyBag setIsOpenBag={setIsOpenBag} />
             <main>{children}</main>
         </div>
     );

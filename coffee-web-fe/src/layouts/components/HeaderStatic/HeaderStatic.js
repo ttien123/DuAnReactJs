@@ -6,7 +6,8 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { useDispatch, useSelector } from 'react-redux';
 import { setOpenSideMenu } from '../../../reducer/reducerSideMenu/SideMenu.reducer';
 import { setOpenSignIn, setOpenSignUp } from '../../../reducer/Auth/Auth';
-function HeaderStatic({ isFixed }) {
+import IconMyBag from '../../../components/IconMyBag/IconMyBag';
+function HeaderStatic({ isFixed, setIsOpenBag }) {
     const [isClickLogin, setIsClickLogin] = useState(false);
     // const isOpenSignIn = useSelector((state) => state.authState.isOpenSignIn);
 
@@ -30,6 +31,9 @@ function HeaderStatic({ isFixed }) {
     };
     const handleOpenSignUp = () => {
         dispatch(setOpenSignUp());
+    };
+    const handleOpenBag = () => {
+        setIsOpenBag(true);
     };
 
     return (
@@ -106,16 +110,7 @@ function HeaderStatic({ isFixed }) {
                     </div>
                 </HeadlessTippy>
             </div>
-            <div className={'hidden lg:block absolute top-[50%] translate-y-[-50%] right-[12%] '}>
-                <ButtonCst
-                    className={
-                        'border-white text-[20px] w-[45px] !h-[45px] rounded-[50%] flex items-center justify-center'
-                    }
-                    // onClick={handleOpenAuth}
-                >
-                    <AiOutlineShoppingCart />
-                </ButtonCst>
-            </div>
+            <IconMyBag handleOpenBag={handleOpenBag} />
         </header>
     );
 }
