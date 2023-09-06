@@ -7,10 +7,16 @@ import SignIn from '../../components/SignIn/SignIn';
 import SignUp from '../../components/SignUp/SignUp';
 import MyBag from '../../components/Mybag/Mybag';
 import MoBiMyBag from '../../components/MobiMyBag/MobiMyBag';
+import { useDispatch } from 'react-redux';
+import { setListProductsAdded } from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
+
 
 function MainLayout({ children }) {
+    const dispatch = useDispatch()
+
     const [isFixed, setIsFixed] = useState(false);
     const [isOpenBag, setIsOpenBag] = useState(false);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,6 +32,12 @@ function MainLayout({ children }) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        if (JSON.parse(localStorage.getItem('List_Products_Added'))) {
+            dispatch(setListProductsAdded(JSON.parse(localStorage.getItem('List_Products_Added'))))
+        }
+    },[])
 
     return (
         <div className="overflow-hidden">
