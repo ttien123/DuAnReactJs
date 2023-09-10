@@ -29,7 +29,11 @@ function MyBag({ isOpenBag, setIsOpenBag }) {
         const result =
             listProductsAdded &&
             listProductsAdded.reduce((result, product) => {
-                return product.qty * product.price + result;
+                if (product.qty) {
+                    return product.qty * product.price + result;
+                } else {
+                    return result;
+                }
             }, 0);
         return result;
     }, [listProductsAdded]);
