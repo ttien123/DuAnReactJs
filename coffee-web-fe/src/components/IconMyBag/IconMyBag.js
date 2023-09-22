@@ -9,7 +9,7 @@ function IconMyBag({ handleOpenBag, isMoBi }) {
         <div
             className={`${
                 isMoBi ? '!block !left-[8%]' : ''
-            } hidden xl:block absolute top-[50%] translate-y-[-50%] right-[12%]`}
+            } hidden xl:block absolute top-[50%] translate-y-[-50%] right-[8%]`}
         >
             <span className="absolute top-[17px] left-[19px] text-[12px] md:top-[17px] xl:text-white text-colorWeb">
                 {listProductsAdd.length}
