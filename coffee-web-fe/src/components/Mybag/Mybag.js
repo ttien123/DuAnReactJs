@@ -17,7 +17,6 @@ import { setIsCloseBag } from '../../reducer/openMyBag/openMyBag';
 function MyBag() {
     const listProductsAdded = useSelector((state) => state.listProductsRedux.listProducts);
     const isOpenBag = useSelector((state) => state.IsOpenBag.isOpenBag);
-    console.log(isOpenBag);
     const dispatch = useDispatch();
 
     const handleCloseBag = () => {
