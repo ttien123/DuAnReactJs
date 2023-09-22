@@ -6,17 +6,18 @@ import { setOpenSideMenu } from '../../../reducer/reducerSideMenu/SideMenu.reduc
 import IconMyBag from '../../../components/IconMyBag/IconMyBag';
 
 import { Element, Link } from 'react-scroll';
+import { setIsOpenBag } from '../../../reducer/openMyBag/openMyBag';
 
-function HeaderStatic({ isFixed, setIsOpenBag }) {
+function HeaderStatic({ isFixed }) {
     // xét tắt mở sideMenu
-    const isOpenSideMenu = useSelector((state) => state.sideMenu.isOpenSideMeu);
+    console.log(setIsOpenBag);
     const dispatch = useDispatch();
     const handleOpenSideMenu = () => {
         dispatch(setOpenSideMenu(true));
     };
 
     const handleOpenBag = () => {
-        setIsOpenBag(true);
+        dispatch(setIsOpenBag());
     };
 
     return (

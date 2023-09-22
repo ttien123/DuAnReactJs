@@ -13,12 +13,15 @@ import 'swiper/css/scrollbar';
 import { FreeMode, Scrollbar, Mousewheel } from 'swiper/modules';
 import { setDeleteAllProductsAdd } from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
 import { useMemo } from 'react';
-function MyBag({ isOpenBag, setIsOpenBag }) {
+import { setIsCloseBag } from '../../reducer/openMyBag/openMyBag';
+function MyBag() {
     const listProductsAdded = useSelector((state) => state.listProductsRedux.listProducts);
+    const isOpenBag = useSelector((state) => state.IsOpenBag.isOpenBag);
+    console.log(isOpenBag);
     const dispatch = useDispatch();
 
     const handleCloseBag = () => {
-        setIsOpenBag(false);
+        dispatch(setIsCloseBag());
     };
 
     const deleteAllProductAdded = () => {

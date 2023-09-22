@@ -38,10 +38,10 @@ function MainLayout({ children }) {
     return (
         <div className="overflow-hidden">
             {/* <LoadingStart /> */}
-            <HeaderStatic isFixed={isFixed} isOpenBag={isOpenBag} setIsOpenBag={setIsOpenBag} />
-            <MyBag isOpenBag={isOpenBag} setIsOpenBag={setIsOpenBag} />
+            <HeaderStatic isFixed={isFixed} />
+            <MyBag />
             <SideMenu />
-            <MoBiMyBag setIsOpenBag={setIsOpenBag} />
+            <MoBiMyBag />
             <main>{children}</main>
         </div>
     );

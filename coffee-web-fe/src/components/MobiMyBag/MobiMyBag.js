@@ -2,13 +2,14 @@ import { useMemo } from 'react';
 import IconMyBag from '../IconMyBag/IconMyBag';
 import { useSelector, useDispatch } from 'react-redux';
 import { setOpenSideMenu } from '../../reducer/reducerSideMenu/SideMenu.reducer';
+import { setIsOpenBag } from '../../reducer/openMyBag/openMyBag';
 
-function MoBiMyBag({ setIsOpenBag }) {
+function MoBiMyBag() {
     const listProductsAdded = useSelector((state) => state.listProductsRedux.listProducts);
     const dispatch = useDispatch();
 
     const handleOpenBag = () => {
-        setIsOpenBag(true);
+        dispatch(setIsOpenBag());
         dispatch(setOpenSideMenu(false));
     };
 
