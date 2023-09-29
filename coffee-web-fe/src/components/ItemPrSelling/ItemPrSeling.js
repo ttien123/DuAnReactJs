@@ -4,7 +4,7 @@ import OverlayProduct from '../OverlayProduct/OverlayProduct';
 
 const ItemPrSelling = ({ product }) => {
     return (
-        <div className="w-[255px] mx-auto p-[15px] border-[1px] group">
+        <div className="w-full md:w-[350px] lg:w-[230px] xl:w-[255px] mx-auto p-[15px] border-[1px] group">
             <div className="w-full relative group overflow-hidden">
                 <img
                     src={product.url}

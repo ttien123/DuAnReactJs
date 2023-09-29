@@ -3,16 +3,20 @@ import SideMenu from '../components/SideMenu/SideMenu';
 import MyBag from '../../components/Mybag/Mybag';
 import MoBiMyBag from '../../components/MobiMyBag/MobiMyBag';
 import { useIsFetching, useIsMutating } from 'react-query';
+import ArrowToTop from '../components/ArrowToTop/ArrowToTop';
+import useScrollArrowTop from '../../Hook/useScrollArrowTop/useScrollArrowTop';
 
 function MainLayout({ children }) {
     const isFetching = useIsFetching();
     const isMutating = useIsMutating();
+    const isArrowTop = useScrollArrowTop();
     return (
         <div className="overflow-hidden">
             {isFetching + isMutating > 0 && <LoadingStart />}
             <MyBag />
             <SideMenu />
             <MoBiMyBag />
+            <ArrowToTop isArrowTop={isArrowTop} />
             <main>{children}</main>
         </div>
     );

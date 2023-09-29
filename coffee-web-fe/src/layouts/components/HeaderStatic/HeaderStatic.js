@@ -6,8 +6,12 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { Element, Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import { setIsOpenBag } from '../../../reducer/openMyBag/openMyBag';
+import { useState } from 'react';
+import InputSearch from '../InputSearch/InputSearch';
 
 function HeaderStatic({ isFixed, isPrDetail }) {
+    const [isSearch, setIsSearch] = useState(false);
+    const [isPc, setIsPC] = useState(false);
     // xét tắt mở sideMenu
     const dispatch = useDispatch();
     const handleOpenSideMenu = () => {
@@ -20,10 +24,30 @@ function HeaderStatic({ isFixed, isPrDetail }) {
 
     return (
         <Element name="home">
+            <div
+                className={`fixed z-[1000] top-0 left-0 right-0 bottom-0 bg-[#000] opacity-40 ${
+                    isSearch ? ' block' : 'hidden'
+                }`}
+                onClick={(e) => setIsSearch(false)}
+            ></div>
+
+            <div
+                className={`h-[60px] bg-white z-[1000] fixed top-0 left-0 flex right-0 xl:hidden duration-500 transition-all ${
+                    isSearch ? 'translate-y-[0]' : 'translate-y-[-100%]'
+                }`}
+            >
+                <InputSearch isSearch />
+                <button className="w-[20%] border-l-[1px] border-solid" onClick={(e) => setIsSearch(false)}>
+                    Cancel
+                </button>
+            </div>
+
             <header
                 className={`${
                     isFixed ? 'fixed animate-dropDownHeaderScroll bg-colorWeb' : 'absolute bg-transparent'
-                } z-[500] top-0 left-0 right-0 bottom-0 p-[15px] ${isPrDetail ? 'h-[100px] !bg-colorWeb' : 'h-[87px]'}`}
+                } z-[500] top-0 left-0 right-0 bottom-0 p-[15px] ${
+                    isPrDetail ? 'h-[60px] xl:h-[100px] !bg-colorWeb' : 'h-[87px]'
+                }`}
             >
                 <button
                     onClick={handleOpenSideMenu}
@@ -36,7 +60,11 @@ function HeaderStatic({ isFixed, isPrDetail }) {
                     <span className="block w-full h-[2px] bg-white mt-1 group-hover:w-[70%] transition-all duration-500"></span>
                 </button>
                 <div className="relative container h-full">
-                    <div className="flex items-center justify-center xl:justify-between h-full">
+                    <div
+                        className={`flex items-center xl:justify-between h-full ${
+                            isPrDetail ? 'justify-between' : 'justify-center'
+                        }`}
+                    >
                         {isPrDetail ? (
                             <RouterLink to={'/'} className="navbar-item">
                                 <img
@@ -66,13 +94,12 @@ function HeaderStatic({ isFixed, isPrDetail }) {
                         <div className={`hidden flex-1 ${isPrDetail ? 'xl:hidden' : 'xl:block'}`}>
                             <Navbar />
                         </div>
-                        <div className={`${isPrDetail ? 'mr-20 flex' : 'hidden'}`}>
-                            <input
-                                type="text"
-                                placeholder="Search Product"
-                                className="block w-[350px] p-4 h-[35px] outline-none"
-                            />
-                            <button className="flex text-[20px] items-center justify-center bg-white border-l-[1px] border-colorWeb w-[50px] h-[35px]">
+                        <div className={`${isPrDetail ? 'mr-0 xl:mr-20 ' : 'hidden'}`}>
+                            <InputSearch />
+                            <button
+                                onClick={(e) => setIsSearch(true)}
+                                className="flex xl:hidden text-[20px] items-center justify-center bg-white border-l-[1px] border-colorWeb w-[50px] h-[35px]"
+                            >
                                 <AiOutlineSearch />
                             </button>
                         </div>
