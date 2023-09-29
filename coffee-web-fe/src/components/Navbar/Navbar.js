@@ -32,8 +32,8 @@ function Navbar({ isColMenu }) {
                 >
                     <li
                         onClick={handleCloseSideMenu}
-                        className={`min-w-[130px] cursor-pointer inline-block ${
-                            isColMenu ? 'text-center w-full lg:text-left' : 'text-center'
+                        className={`py-2 min-w-[130px] cursor-pointer inline-block ${
+                            isColMenu ? 'py-0 text-center w-full lg:text-left' : 'text-center'
                         }`}
                     >
                         <ButtonCst isColMenu={isColMenu}>Home</ButtonCst>
@@ -51,8 +51,8 @@ function Navbar({ isColMenu }) {
                 >
                     <li
                         onClick={handleCloseSideMenu}
-                        className={`min-w-[130px] cursor-pointer inline-block ${
-                            isColMenu ? 'text-center w-full lg:text-left' : 'text-center'
+                        className={`py-2 min-w-[130px] cursor-pointer inline-block ${
+                            isColMenu ? 'py-0 text-center w-full lg:text-left' : 'text-center'
                         }`}
                     >
                         <ButtonCst isColMenu={isColMenu}>About Coffee</ButtonCst>
@@ -70,8 +70,8 @@ function Navbar({ isColMenu }) {
                 >
                     <li
                         onClick={handleCloseSideMenu}
-                        className={`min-w-[130px] cursor-pointer inline-block ${
-                            isColMenu ? 'text-center w-full lg:text-left' : 'text-center'
+                        className={`py-2 min-w-[130px] cursor-pointer inline-block ${
+                            isColMenu ? 'py-0 text-center w-full lg:text-left' : 'text-center'
                         }`}
                     >
                         <ButtonCst isColMenu={isColMenu}>Our Menu</ButtonCst>
@@ -89,8 +89,8 @@ function Navbar({ isColMenu }) {
                 >
                     <li
                         onClick={handleCloseSideMenu}
-                        className={`min-w-[130px] cursor-pointer inline-block ${
-                            isColMenu ? 'text-center w-full lg:text-left' : 'text-center'
+                        className={`py-2 min-w-[130px] cursor-pointer inline-block ${
+                            isColMenu ? 'py-0 text-center w-full lg:text-left' : 'text-center'
                         }`}
                     >
                         <ButtonCst isColMenu={isColMenu}>News & Blog</ButtonCst>
@@ -108,8 +108,8 @@ function Navbar({ isColMenu }) {
                 >
                     <li
                         onClick={handleCloseSideMenu}
-                        className={`min-w-[130px] cursor-pointer inline-block ${
-                            isColMenu ? 'text-center w-full lg:text-left' : 'text-center'
+                        className={`py-2 min-w-[130px] cursor-pointer inline-block ${
+                            isColMenu ? 'py-0 text-center w-full lg:text-left' : 'text-center'
                         }`}
                     >
                         <ButtonCst isColMenu={isColMenu}>Reviews</ButtonCst>

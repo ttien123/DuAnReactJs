@@ -3,6 +3,7 @@ import IconMyBag from '../IconMyBag/IconMyBag';
 import { useSelector, useDispatch } from 'react-redux';
 import { setOpenSideMenu } from '../../reducer/reducerSideMenu/SideMenu.reducer';
 import { setIsOpenBag } from '../../reducer/openMyBag/openMyBag';
+import TotalPriceProduct from '../TotalPriceProduct/TotalPriceProduct';
 
 function MoBiMyBag() {
     const listProductsAdded = useSelector((state) => state.listProductsRedux.listProducts);
@@ -13,14 +14,7 @@ function MoBiMyBag() {
         dispatch(setOpenSideMenu(false));
     };
 
-    const total = useMemo(() => {
-        const result =
-            listProductsAdded &&
-            listProductsAdded.reduce((result, product) => {
-                return product.qty * product.price + result;
-            }, 0);
-        return result;
-    }, [listProductsAdded]);
+    const total = TotalPriceProduct();
 
     return (
         <div

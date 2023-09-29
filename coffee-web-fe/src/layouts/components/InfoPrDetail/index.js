@@ -1,3 +1,3 @@
-import InfoPrDetail from '.';
+import InfoPrDetail from './InfoPrDetail';
 
 export default InfoPrDetail;

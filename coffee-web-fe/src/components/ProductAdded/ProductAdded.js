@@ -1,39 +1,14 @@
 import { BiTrash } from 'react-icons/bi';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    setChangeQtyProductAdd,
-    setDeleteProductAdded,
-    setDownQtyProduct,
-    setUpQtyProduct,
-} from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
+import { setDeleteProductAdded } from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
+import { HandleQtyPr } from '../HandleQtyPr/HandleQtyPr';
 
 function ProductAdded({ product, index }) {
     const dispatch = useDispatch();
 
     const deleteProductAdd = () => {
         dispatch(setDeleteProductAdded(index));
-    };
-
-    const handleChangeQty = (value, index) => {
-        // if (value === NaN || value === null) {
-        //     value = 1;
-        // }
-        dispatch(setChangeQtyProductAdd({ value, index }));
-    };
-
-    const handleUpQty = (index) => {
-        dispatch(setUpQtyProduct(index));
-    };
-
-    const handleDownQty = (index) => {
-        dispatch(setDownQtyProduct(index));
-    };
-
-    const handleBlurInput = (value, index) => {
-        if (value === '') {
-            dispatch(setDeleteProductAdded(index));
-        }
     };
 
     return (
@@ -43,25 +18,7 @@ function ProductAdded({ product, index }) {
             </div>
             <div className="text-[#2D2D2D] p-[10px] flex-1">
                 <h5 className="text-[#2D2D2D] text-[17px] font-medium">{product.name}</h5>
-                <div className="text-[#2D2D2D] text-[14px] opacity-80 flex justify-center items-center">
-                    Qty:
-                    <button
-                        onClick={(e) => handleDownQty(index)}
-                        className="text-[20px] ml-2 mr-2 inline-block px-2 py-2"
-                    >
-                        -
-                    </button>
-                    <input
-                        value={product.qty || ''}
-                        type="text"
-                        className="block w-[30px] h-[30px] text-center flex-1"
-                        onChange={(e) => handleChangeQty(e.target.value, index)}
-                        onBlur={(e) => handleBlurInput(e.target.value, index)}
-                    />
-                    <button onClick={(e) => handleUpQty(index)} className="text-[16px] ml-2 inline-block px-2 py-2">
-                        +
-                    </button>
-                </div>
+                <HandleQtyPr product={product} index={index} />
                 <div className="flex items-center justify-between">
                     <span className="text-[#2D2D2D] text-[14px] opacity-80">Price: {product.price}$</span>
                     <button onClick={deleteProductAdd}>

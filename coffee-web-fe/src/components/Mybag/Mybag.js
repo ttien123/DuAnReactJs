@@ -12,8 +12,8 @@ import 'swiper/css/scrollbar';
 // import required modules
 import { FreeMode, Scrollbar, Mousewheel } from 'swiper/modules';
 import { setDeleteAllProductsAdd } from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
-import { useMemo } from 'react';
 import { setIsCloseBag } from '../../reducer/openMyBag/openMyBag';
+import TotalPriceProduct from '../TotalPriceProduct/TotalPriceProduct';
 function MyBag() {
     const listProductsAdded = useSelector((state) => state.listProductsRedux.listProducts);
     const isOpenBag = useSelector((state) => state.IsOpenBag.isOpenBag);
@@ -27,18 +27,7 @@ function MyBag() {
         dispatch(setDeleteAllProductsAdd());
     };
 
-    const total = useMemo(() => {
-        const result =
-            listProductsAdded &&
-            listProductsAdded.reduce((result, product) => {
-                if (product.qty) {
-                    return product.qty * product.price + result;
-                } else {
-                    return result;
-                }
-            }, 0);
-        return result;
-    }, [listProductsAdded]);
+    const total = TotalPriceProduct();
 
     return (
         <div

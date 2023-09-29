@@ -6,7 +6,7 @@ import InfoPrDetail from '../../layouts/components/InfoPrDetail';
 const ProductDetail = () => {
     useGetProductsAdd();
     return (
-        <div className="h-[5000px]">
+        <div className="">
             <HeaderStatic isPrDetail />
             <InfoPrDetail />
         </div>

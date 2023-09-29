@@ -5,7 +5,7 @@ import LayoutPrDetail from '../layouts/LayoutPrDetail/LayoutPrDetail';
 
 const publicRoutes = [
     { path: '/', namePage: 'Home', component: Home, layout: MainLayout },
-    { path: 'productDetail', namePage: 'ProductDetail', component: ProductDetail, layout: MainLayout },
+    { path: 'productDetail/:id', namePage: 'ProductDetail', component: ProductDetail, layout: MainLayout },
 ];
 
 export { publicRoutes };

@@ -23,7 +23,7 @@ function HeaderStatic({ isFixed, isPrDetail }) {
             <header
                 className={`${
                     isFixed ? 'fixed animate-dropDownHeaderScroll bg-colorWeb' : 'absolute bg-transparent'
-                } z-[500] top-0 left-0 right-0 bottom-0 p-[15px] !bg-colorWeb ${isPrDetail ? 'h-[100px]' : 'h-[87px]'}`}
+                } z-[500] top-0 left-0 right-0 bottom-0 p-[15px] ${isPrDetail ? 'h-[100px] !bg-colorWeb' : 'h-[87px]'}`}
             >
                 <button
                     onClick={handleOpenSideMenu}

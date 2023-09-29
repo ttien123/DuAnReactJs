@@ -6,29 +6,11 @@ import { setIsOpenBag } from '../../reducer/openMyBag/openMyBag';
 import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { setIdPrDetail } from '../../reducer/idPrDetail/idPrDetail';
+import { handleAddProduct } from '../HandleQtyPr/HandleQtyPr';
 
-function OverlayProduct({ product }) {
-    const dispatch = useDispatch();
+function OverlayProduct({ product, isSelling }) {
     const listProductsAdd = useSelector((state) => state.listProductsRedux.listProducts);
-
-    const handleAddProduct = () => {
-        let x = 0;
-        listProductsAdd.map((productList, index) => {
-            if (productList.id === product.id) {
-                return (x = 1);
-            }
-        });
-        if (x === 0) {
-            const productAdd = product;
-            if (!productAdd.qty) {
-                productAdd.qty = 1;
-            }
-            dispatch(setAddProducts(productAdd));
-        } else {
-            x = 0;
-        }
-        dispatch(setIsOpenBag());
-    };
+    const dispatch = useDispatch();
 
     const handleToPrDetail = (product) => {
         scroll.scrollToTop({
@@ -50,15 +32,19 @@ function OverlayProduct({ product }) {
                 </div>
                 <div className="flex mt-2 absolute top-2 left-0 bottom-0 w-full h-full items-center justify-between right-0">
                     <Link
-                        to={'/ProductDetail'}
+                        to={`/ProductDetail/${product.id}`}
                         onClick={(e) => handleToPrDetail(product)}
-                        className="md:mr-2  w-[50px] md:w-[30px] md:h-[30px] xl:w-[50px] xl:h-[50px] m-auto  h-[50px] cursor-pointer bg-[#e7bd91] rounded-full flex items-center justify-center"
+                        className={`md:mr-2  w-[50px] md:w-[30px] md:h-[30px] xl:w-[50px] xl:h-[50px] m-auto h-[50px] cursor-pointer bg-[#e7bd91] rounded-full flex items-center justify-center ${
+                            isSelling ? 'xl:!w-[40px] xl:!h-[40px]' : ''
+                        }`}
                     >
                         <img src={cup} alt="Cup" className="w-[20px]" />
                     </Link>
                     <button
-                        onClick={handleAddProduct}
-                        className="w-[50px] md:w-[30px] md:h-[30px] xl:w-[50px] xl:h-[50px] m-auto h-[50px] bg-[#e7bd91] rounded-full flex items-center justify-center"
+                        onClick={(e) => handleAddProduct(product, listProductsAdd, dispatch)}
+                        className={`w-[50px] md:w-[30px] md:h-[30px] xl:w-[50px] xl:h-[50px] m-auto h-[50px] bg-[#e7bd91] rounded-full flex items-center justify-center ${
+                            isSelling ? 'xl:!w-[40px] xl:!h-[40px]' : ''
+                        }`}
                     >
                         <AiOutlineShoppingCart className="text-[18px] cursor-pointer text-colorWeb" />
                     </button>
