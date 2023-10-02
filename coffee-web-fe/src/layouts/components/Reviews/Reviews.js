@@ -2,16 +2,26 @@ import HeadingCpn from '../../../components/HeadingCpn/HeadingCpn';
 import { FaQuoteRight } from 'react-icons/fa';
 
 import { Element } from 'react-scroll';
+import useScrollAnimation from '../../../Hook/useScrollAnimation/useScrollAnimation';
 
 function Reviews() {
+    const isAnimation = useScrollAnimation('.Review');
     return (
         <Element name="review">
-            <section>
+            <section className="Review">
                 <div className="container grid grid-cols-2 gap-x-[30px] px-[15px]">
-                    <div className="col-span-2 lg:col-span-1">
+                    <div
+                        className={`col-span-2 lg:col-span-1 translate-x-[-100%] opacity-0 ${
+                            isAnimation ? 'animate-fadeLeft' : ''
+                        }`}
+                    >
                         <img src="https://megaone.acrothemes.com/coffee/images/testimonial-img.png" alt="Img" />
                     </div>
-                    <div className="col-span-2 lg:col-span-1 mt-8">
+                    <div
+                        className={`col-span-2 lg:col-span-1 mt-8 translate-x-[100%] opacity-0 ${
+                            isAnimation ? 'animate-fadeRight' : ''
+                        }`}
+                    >
                         <HeadingCpn img heading={'Coffee Lovers'} isNotMb />
                         <div>
                             <div className="my-[25px] text-[25px] text-[#e7bd91]">

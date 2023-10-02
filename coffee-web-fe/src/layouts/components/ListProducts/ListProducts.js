@@ -4,19 +4,21 @@ import { getListProducts } from '../../../apis/list.api';
 import OverlayProduct from '../../../components/OverlayProduct/OverlayProduct';
 
 import { Element } from 'react-scroll';
+import useScrollAnimation from '../../../Hook/useScrollAnimation/useScrollAnimation';
 
 function ListProducts() {
     const { data, isFetching } = useQuery({
         queryKey: ['listProducts'],
         queryFn: () => getListProducts(),
     });
+    const isAnimation = useScrollAnimation('.OurMenu');
 
     return (
         <Element name="ourMenu">
-            <section>
+            <section className="OurMenu">
                 <div className="px-[20px]">
                     <div className="container">
-                        <HeadingCpn img title heading={'Our Coffee Menu'} description />
+                        <HeadingCpn img title heading={'Our Coffee Menu'} description isAnimation={isAnimation} />
                     </div>
                     <div className="grid grid-cols-12 gap-[10px]">
                         {data?.data.map((product) => {

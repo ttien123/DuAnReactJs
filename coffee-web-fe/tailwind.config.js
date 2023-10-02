@@ -31,11 +31,31 @@ module.exports = {
                     '0%': { transform: 'translateX(0%)' },
                     '100%': { transform: 'translateX(100%)' },
                 },
+                fadeIn: {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+                fadeLeft: {
+                    '0%': { transform: 'translateX(-100%)', opacity: 0 },
+                    '100%': { transform: 'translateX(0%)', opacity: 1 },
+                },
+                fadeRight: {
+                    '0%': { transform: 'translateX(100%)', opacity: 0 },
+                    '100%': { transform: 'translateX(0%)', opacity: 1 },
+                },
+                fadeInUp: {
+                    '0%': { transform: 'translateY(100%)', opacity: 0 },
+                    '100%': { transform: 'translateY(0%)', opacity: 1 },
+                },
             },
             animation: {
                 dropDownHeaderScroll: 'dropDownHeaderScroll 0.5s linear forwards',
                 aniOpenBag: 'openBag 0.5s ease forwards',
                 aniCloseBag: 'closeBag 0.5s ease forwards',
+                fadeIn: 'fadeIn 1s ease 0.25s forwards',
+                fadeLeft: 'fadeLeft 1s ease 0.2s forwards',
+                fadeRight: 'fadeRight 1s ease 0.2s forwards',
+                fadeInUp: 'fadeInUp 1s ease 0.5s forwards',
             },
         },
     },

@@ -29,7 +29,7 @@ const InfoPrDetail = () => {
     }, [productQuery.data]);
 
     return (
-        <div className="mt-[100px]">
+        <div className="mt-[50px] xl:mt-[100px]">
             <div className="container px-[15px]">
                 <div className="flex pt-8 flex-col md:flex-row text-center md:text-left">
                     <div className="w-full md:w-[40%]">

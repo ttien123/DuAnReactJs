@@ -15,8 +15,8 @@ function MainLayout({ children }) {
             {isFetching + isMutating > 0 && <LoadingStart />}
             <MyBag />
             <SideMenu />
-            <MoBiMyBag />
             <ArrowToTop isArrowTop={isArrowTop} />
+            <MoBiMyBag />
             <main>{children}</main>
         </div>
     );

@@ -25,7 +25,7 @@ function SideMenu() {
         <div
             className={`${
                 isOpenSideMenu ? 'translate-y-[0]' : 'translate-y-[100%]'
-            } transition-all duration-500 fixed z-[1000] bg-[url(https://megaone.acrothemes.com/coffee/images/slider-1.jpg)] w-full h-full bg-cover bg-center overflow-hidden`}
+            } transition-all duration-500 fixed z-[1200] bg-[url(https://megaone.acrothemes.com/coffee/images/slider-1.jpg)] w-full h-full bg-cover bg-center overflow-hidden`}
         >
             <div className="bg-[#000000b3] absolute top-0 left-0 right-0 bottom-0 h-full"></div>
             <button
