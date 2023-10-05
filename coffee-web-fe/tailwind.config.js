@@ -39,6 +39,7 @@ module.exports = {
                     '0%': { transform: 'translateX(-100%)', opacity: 0 },
                     '100%': { transform: 'translateX(0%)', opacity: 1 },
                 },
+
                 fadeRight: {
                     '0%': { transform: 'translateX(100%)', opacity: 0 },
                     '100%': { transform: 'translateX(0%)', opacity: 1 },
@@ -54,6 +55,7 @@ module.exports = {
                 aniCloseBag: 'closeBag 0.5s ease forwards',
                 fadeIn: 'fadeIn 1s ease 0.25s forwards',
                 fadeLeft: 'fadeLeft 1s ease 0.2s forwards',
+                fadeLeftDelay: 'fadeLeft 1s ease 0.75s forwards',
                 fadeRight: 'fadeRight 1s ease 0.2s forwards',
                 fadeInUp: 'fadeInUp 1s ease 0.5s forwards',
             },

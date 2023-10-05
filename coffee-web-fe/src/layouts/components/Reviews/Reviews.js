@@ -22,7 +22,7 @@ function Reviews() {
                             isAnimation ? 'animate-fadeRight' : ''
                         }`}
                     >
-                        <HeadingCpn img heading={'Coffee Lovers'} isNotMb />
+                        <HeadingCpn img heading={'Coffee Lovers'} isNotMb isAnimation={isAnimation} />
                         <div>
                             <div className="my-[25px] text-[25px] text-[#e7bd91]">
                                 <FaQuoteRight className="mx-auto" />

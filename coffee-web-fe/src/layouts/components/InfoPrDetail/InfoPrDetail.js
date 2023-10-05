@@ -30,7 +30,7 @@ const InfoPrDetail = () => {
 
     return (
         <div className="mt-[50px] xl:mt-[100px]">
-            <div className="container px-[15px]">
+            <div className="container px-[15px] xl:p-0">
                 <div className="flex pt-8 flex-col md:flex-row text-center md:text-left">
                     <div className="w-full md:w-[40%]">
                         <img src={product.url} alt="Product" className="w-full h-[350px]" />

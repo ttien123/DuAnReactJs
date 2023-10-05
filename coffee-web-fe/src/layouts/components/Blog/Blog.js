@@ -11,7 +11,7 @@ function Blog() {
             <div className={`Blog grid grid-cols-2 bg-[#22100b] flex items-center justify-end `}>
                 <div
                     className={`col-span-2 lg:col-span-1 text-white w-[90%] py-[80px] lg:py-0 lg:w-[60%] mx-auto translate-x-[-100%] opacity-0 ${
-                        isAnimation ? 'animate-fadeLeft' : ''
+                        isAnimation ? 'animate-fadeLeftDelay' : ''
                     }`}
                 >
                     <h4 className="text-T16 mt-2 text-center lg:text-left">Dec 14, 2020</h4>
