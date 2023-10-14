@@ -11,15 +11,15 @@ function Reviews() {
             <section className="Review">
                 <div className="container grid grid-cols-2 gap-x-[30px] px-[15px]">
                     <div
-                        className={`col-span-2 lg:col-span-1 translate-x-[-100%] opacity-0 ${
-                            isAnimation ? 'animate-fadeLeft' : ''
+                        className={`col-span-2 lg:col-span-1 xl:translate-x-[-100%] xl:opacity-0 ${
+                            isAnimation ? 'xl:animate-fadeLeft' : ''
                         }`}
                     >
                         <img src="https://megaone.acrothemes.com/coffee/images/testimonial-img.png" alt="Img" />
                     </div>
                     <div
-                        className={`col-span-2 lg:col-span-1 mt-8 translate-x-[100%] opacity-0 ${
-                            isAnimation ? 'animate-fadeRight' : ''
+                        className={`col-span-2 lg:col-span-1 mt-8 xl:translate-x-[100%] xl:opacity-0 ${
+                            isAnimation ? 'xl:animate-fadeRight' : ''
                         }`}
                     >
                         <HeadingCpn img heading={'Coffee Lovers'} isNotMb isAnimation={isAnimation} />

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setOpenSideMenu } from '../../reducer/reducerSideMenu/SideMenu.reducer';
 import { setIsOpenBag } from '../../reducer/openMyBag/openMyBag';
 import TotalPriceProduct from '../TotalPriceProduct/TotalPriceProduct';
+import { Link } from 'react-router-dom';
 
 function MoBiMyBag() {
     const listProductsAdded = useSelector((state) => state.listProductsRedux.listProducts);
@@ -29,8 +30,13 @@ function MoBiMyBag() {
                     <span className="text-colorWeb text-[14px] md:text-T16">Total Price: {total}$</span>
                 </div>
             </div>
-            <div className="bg-colorWeb h-full text-white grid place-items-center" onClick={(e) => e.stopPropagation()}>
-                <button className="w-[120px] text-[14px] md:text-T16">Check Out</button>
+            <div
+                className="bg-colorWeb h-full z-[100] text-white grid place-items-center"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <Link to="/checkout" className="w-[120px] block text-center text-[14px] md:text-T16">
+                    Check Out
+                </Link>
             </div>
         </div>
     );

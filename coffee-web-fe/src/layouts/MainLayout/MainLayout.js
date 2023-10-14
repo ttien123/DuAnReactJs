@@ -5,14 +5,14 @@ import MoBiMyBag from '../../components/MobiMyBag/MobiMyBag';
 import { useIsFetching, useIsMutating } from 'react-query';
 import ArrowToTop from '../components/ArrowToTop/ArrowToTop';
 import useScrollArrowTop from '../../Hook/useScrollArrowTop/useScrollArrowTop';
+import { useSelector } from 'react-redux';
 
 function MainLayout({ children }) {
-    const isFetching = useIsFetching();
-    const isMutating = useIsMutating();
+    const isloadingWeb = useSelector((state) => state.loadingWeb.isLoadingWeb);
     const isArrowTop = useScrollArrowTop();
     return (
         <div className="overflow-hidden">
-            {isFetching + isMutating > 0 && <LoadingStart />}
+            {isloadingWeb > 0 && <LoadingStart />}
             <MyBag />
             <SideMenu />
             <ArrowToTop isArrowTop={isArrowTop} />

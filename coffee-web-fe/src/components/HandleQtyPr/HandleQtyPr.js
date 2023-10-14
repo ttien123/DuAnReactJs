@@ -9,7 +9,7 @@ import {
 } from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
 import { setIsOpenBag } from '../../reducer/openMyBag/openMyBag';
 
-export const HandleQtyPr = ({ product }) => {
+export const HandleQtyPr = ({ product, isCheckout }) => {
     const dispatch = useDispatch();
 
     const handleChangeQty = (value, product) => {
@@ -36,9 +36,14 @@ export const HandleQtyPr = ({ product }) => {
     return (
         <div className="text-[#2D2D2D] text-[14px] opacity-80 flex justify-center items-center">
             Qty:
-            <button onClick={(e) => handleDownQty(product)} className="text-[20px] ml-2 mr-2 inline-block px-2 py-2">
-                -
-            </button>
+            {!isCheckout && (
+                <button
+                    onClick={(e) => handleDownQty(product)}
+                    className="text-[20px] ml-2 mr-2 inline-block px-2 py-2"
+                >
+                    -
+                </button>
+            )}
             <input
                 value={product.qty || ''}
                 type="text"
@@ -46,9 +51,11 @@ export const HandleQtyPr = ({ product }) => {
                 onChange={(e) => handleChangeQty(e.target.value, product)}
                 onBlur={(e) => handleBlurInput(e.target.value, product)}
             />
-            <button onClick={(e) => handleUpQty(product)} className="text-[16px] ml-2 inline-block px-2 py-2">
-                +
-            </button>
+            {!isCheckout && (
+                <button onClick={(e) => handleUpQty(product)} className="text-[16px] ml-2 inline-block px-2 py-2">
+                    +
+                </button>
+            )}
         </div>
     );
 };

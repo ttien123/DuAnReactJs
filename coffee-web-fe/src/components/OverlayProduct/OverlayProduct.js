@@ -1,8 +1,6 @@
 import cup from '../../assets/img/imgItemAbout/cup.png';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAddProducts } from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
-import { setIsOpenBag } from '../../reducer/openMyBag/openMyBag';
 import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { setIdPrDetail } from '../../reducer/idPrDetail/idPrDetail';

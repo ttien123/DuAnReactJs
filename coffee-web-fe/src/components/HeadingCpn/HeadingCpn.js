@@ -1,8 +1,8 @@
 function HeadingCpn({ img, title, heading, description, isNotMb, isAnimation }) {
     return (
         <div
-            className={`max-w-[90%] lg:max-w-[66.666667%] opacity-0 mx-auto mb-[60px] lg:mb-[100px] ${
-                isAnimation ? 'animate-fadeIn' : ''
+            className={`max-w-[90%] lg:max-w-[66.666667%] xl:opacity-0 mx-auto mb-[60px] lg:mb-[100px] ${
+                isAnimation ? 'xl:animate-fadeIn' : ''
             } ${isNotMb ? '!mb-0' : ''}`}
         >
             <div className={`${img ? 'block' : 'hidden'}`}>

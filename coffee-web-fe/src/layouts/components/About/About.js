@@ -17,8 +17,8 @@ function About() {
                 <HeadingCpn img title heading={'Best Coffee in Town'} description isAnimation={isAnimation} />
                 <div className="grid grid-cols-3">
                     <div
-                        className={`col-span-3 lg:col-span-1 ml-4 translate-x-[-100%] ${
-                            isAnimation ? 'animate-fadeLeft' : ''
+                        className={`col-span-3 lg:col-span-1 ml-4 xl:translate-x-[-100%] ${
+                            isAnimation ? 'xl:animate-fadeLeft' : ''
                         }`}
                     >
                         <ItemAbout
@@ -44,8 +44,8 @@ function About() {
                         />
                     </div>
                     <div
-                        className={`col-span-3 lg:col-span-1 my-[88px] opacity-0 lg:my-0 translate-y-[100%] ${
-                            isAnimation ? 'animate-fadeInUp' : ''
+                        className={`col-span-3 lg:col-span-1 my-[88px] xl:opacity-0 lg:my-0 xl:translate-y-[100%] ${
+                            isAnimation ? 'xl:animate-fadeInUp' : ''
                         }`}
                     >
                         <img
@@ -55,8 +55,8 @@ function About() {
                         />
                     </div>
                     <div
-                        className={`col-span-3 lg:col-span-1 ml-4 translate-y-[100%] ${
-                            isAnimation ? 'animate-fadeRight' : ''
+                        className={`col-span-3 lg:col-span-1 ml-4 xl:translate-y-[100%] ${
+                            isAnimation ? 'xl:animate-fadeRight' : ''
                         }`}
                     >
                         <ItemAbout

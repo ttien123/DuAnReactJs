@@ -48,6 +48,10 @@ module.exports = {
                     '0%': { transform: 'translateY(100%)', opacity: 0 },
                     '100%': { transform: 'translateY(0%)', opacity: 1 },
                 },
+                fadeInDown: {
+                    '0%': { transform: 'translateY(-100%)', opacity: 0 },
+                    '100%': { transform: 'translateY(0%)', opacity: 1 },
+                },
             },
             animation: {
                 dropDownHeaderScroll: 'dropDownHeaderScroll 0.5s linear forwards',
@@ -58,6 +62,8 @@ module.exports = {
                 fadeLeftDelay: 'fadeLeft 1s ease 0.75s forwards',
                 fadeRight: 'fadeRight 1s ease 0.2s forwards',
                 fadeInUp: 'fadeInUp 1s ease 0.5s forwards',
+                fadeInUpFooter: 'fadeInUp 1s ease forwards',
+                fadeInDownFooter: 'fadeInDown 1s ease forwards',
             },
         },
     },

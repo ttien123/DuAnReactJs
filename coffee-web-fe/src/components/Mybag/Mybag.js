@@ -9,11 +9,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 
-// import required modules
 import { FreeMode, Scrollbar, Mousewheel } from 'swiper/modules';
+// import required modules
 import { setDeleteAllProductsAdd } from '../../reducer/ListProductsAddRedux/ListProductsAddRedux';
 import { setIsCloseBag } from '../../reducer/openMyBag/openMyBag';
 import TotalPriceProduct from '../TotalPriceProduct/TotalPriceProduct';
+import { animateScroll as scroll } from 'react-scroll';
+
+import { Link } from 'react-router-dom';
 function MyBag() {
     const listProductsAdded = useSelector((state) => state.listProductsRedux.listProducts);
     const isOpenBag = useSelector((state) => state.IsOpenBag.isOpenBag);
@@ -29,6 +32,13 @@ function MyBag() {
 
     const total = TotalPriceProduct();
 
+    const handleToCheckout = () => {
+        scroll.scrollToTop({
+            duration: 0,
+            smooth: true,
+        });
+    };
+
     return (
         <div
             className={`${
@@ -40,14 +50,14 @@ function MyBag() {
                 onClick={handleCloseBag}
             ></div>
             <button
-                className="absolute inline-block p-3 xl:right-[10%] right-[5%] top-[3%] xl:top-[5%]"
+                className="absolute inline-block p-3 xl:right-[10%] right-[5%] top-[1%] xl:top-[5%]"
                 onClick={handleCloseBag}
             >
                 <AiOutlineClose className="text-[30px]" />
             </button>
             <button
                 onClick={deleteAllProductAdded}
-                className="absolute top-[5%] left-[8%] text-[18px] text-red-600 xl:hidden"
+                className="absolute top-[3%] left-[8%] text-[18px] text-red-600 xl:hidden"
             >
                 Delete All
             </button>
@@ -85,9 +95,13 @@ function MyBag() {
             </div>
 
             <div className="hidden xl:flex w-[270px] items-center xl:justify-between">
-                <button className="bg-transparent hover:bg-colorWeb hover:text-white transition-all duration-500 w-[45%] rounded-[5px] p-2 text-colorWeb border-solid border-[1px] border-colorWeb">
+                <Link
+                    to="/checkout"
+                    onClick={handleToCheckout}
+                    className="block text-center bg-transparent hover:bg-colorWeb hover:text-white transition-all duration-500 w-[45%] rounded-[5px] p-2 text-colorWeb border-solid border-[1px] border-colorWeb"
+                >
                     Check Out
-                </button>
+                </Link>
                 <button
                     onClick={deleteAllProductAdded}
                     className="bg-transparent hover:bg-colorWeb hover:text-white transition-all duration-500 w-[45%] rounded-[5px] p-2 text-colorWeb border-solid border-[1px] border-colorWeb"

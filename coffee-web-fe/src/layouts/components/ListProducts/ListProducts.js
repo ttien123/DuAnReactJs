@@ -5,12 +5,26 @@ import OverlayProduct from '../../../components/OverlayProduct/OverlayProduct';
 
 import { Element } from 'react-scroll';
 import useScrollAnimation from '../../../Hook/useScrollAnimation/useScrollAnimation';
+import { useDispatch } from 'react-redux';
+import { setCloseLoadingWeb, setRunLoadingWeb } from '../../../reducer/LoadingWeb/LoadingWeb';
+import { useEffect } from 'react';
 
 function ListProducts() {
+    const dispatch = useDispatch();
     const { data, isFetching } = useQuery({
         queryKey: ['listProducts'],
         queryFn: () => getListProducts(),
+        onSuccess: () => {
+            dispatch(setCloseLoadingWeb());
+        },
     });
+
+    useEffect(() => {
+        if (isFetching) {
+            dispatch(setRunLoadingWeb());
+        }
+    }, [isFetching]);
+
     const isAnimation = useScrollAnimation('.OurMenu');
 
     return (
